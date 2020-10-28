@@ -4,21 +4,12 @@
   "description": "Pet project from React PRO Marathon by Zar",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "start": "webpack-dev-server --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlexBizPlus/PokemonDesk"
-  },
   "author": "Alexey Nezhnov",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AlexBizPlus/PokemonDesk/issues"
-  },
-  "homepage": "https://github.com/AlexBizPlus/PokemonDesk#readme",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
