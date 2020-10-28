@@ -1,0 +1,38 @@
+{
+  "name": "pokemondesk",
+  "version": "1.0.0",
+  "description": "Pet project from React PRO Marathon by Zar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexBizPlus/PokemonDesk"
+  },
+  "author": "Alexey Nezhnov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexBizPlus/PokemonDesk/issues"
+  },
+  "homepage": "https://github.com/AlexBizPlus/PokemonDesk#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "classnames": "2.2.6",
+    "css-loader": "5.0.0",
+    "sass": "1.27.0",
+    "sass-loader": "10.0.4",
+    "style-loader": "2.0.0",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}
