@@ -39,7 +39,7 @@ const MyHometask: SuperIndexInterface = {
 interface MyArray<T> {
   [N: number]: T;
 
-  reduce(fn: (sum: T, i: T) => T, el: T): T;
+  reduce<U>(fn: (sum: U, i: T) => U, init: U): U;
 }
 
 const tsArr: MyArray<number> = [1, 2, 3];
