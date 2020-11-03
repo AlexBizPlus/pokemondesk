@@ -7,7 +7,7 @@
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
-    "test": "pretty-quick --staged && eslint ./src"
+    "test": "pretty-quick --staged && npx eslint ./src"
   },
   "author": "Alexey Nezhnov",
   "license": "ISC",
