@@ -1,29 +1,34 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public'),
   },
   module: {
     rules: [
       {
-        test: /\.(s*)css$/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
         use: [
           'style-loader',
+          'css-modules-typescript-loader?modules',
           {
             loader: 'css-loader',
             options: {
               modules: {
                 mode: 'local',
                 localIdentName: '[name]__[local]__[hash:base64:5]',
-                auto: /\.modules\.\w+$/i
-              }
-            }
+                auto: /\.module\.\w+$/i,
+              },
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.[tj]sx?$/,
@@ -31,7 +36,7 @@ module.exports = {
         use: {
           loader: 'ts-loader',
         },
-      }
+      },
     ],
   },
   devServer: {
@@ -41,7 +46,7 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   devtool: 'source-map',
 };

@@ -14,6 +14,7 @@ package-lock.json
 .editorconfig
 .prettierrc
 .prettierrc.json
+src/**.d.ts
 
 # Папка с собранными файлами проекта
 public/main.js
