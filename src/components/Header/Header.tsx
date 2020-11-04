@@ -5,6 +5,7 @@ import s from './Header.module.scss';
 
 const Header = () => {
   console.log(`qk`);
+  console.log(`qk`);
 
   return (
     <header className={cn(s.header)}>
