@@ -2,7 +2,7 @@
   "name": "pokemondesk",
   "version": "1.0.0",
   "description": "Pet project from React PRO Marathon by Zar",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
@@ -50,7 +50,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm test"
     }
   }
 }
