@@ -2,11 +2,9 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './Header.module.scss';
+import HeaderList from '../HeaderList/HeaderList';
 
 const Header = () => {
-  console.log(`qk`);
-  console.log(`qk`);
-
   return (
     <header className={cn(s.header)}>
       <div className={cn(s.logo)}>
@@ -173,28 +171,7 @@ const Header = () => {
         </a>
       </div>
       <nav className={cn(s.nav)}>
-        <ul className={cn(s.list)}>
-          <li className={cn(s.item)}>
-            <a className={cn(s.link, s.link__active)} href="#" aria-label="На главную страницу">
-              Home
-            </a>
-          </li>
-          <li className={cn(s.item)}>
-            <a className={cn(s.link)} href="#" aria-label="На другую страницу">
-              Pokédex
-            </a>
-          </li>
-          <li className={cn(s.item)}>
-            <a className={cn(s.link)} href="#" aria-label="На другую страницу">
-              Legendaries
-            </a>
-          </li>
-          <li className={cn(s.item)}>
-            <a className={cn(s.link)} href="#" aria-label="На другую страницу">
-              Documentation
-            </a>
-          </li>
-        </ul>
+        <HeaderList />
       </nav>
     </header>
   );
