@@ -1,15 +1,23 @@
+/* eslint-disable import/prefer-default-export */
 // eslint-disable-next-line import/prefer-default-export
-export const HEADER_LIST = [
+interface IHeaderList {
+  name: string;
+  active: boolean;
+  href: string;
+  label: string;
+}
+
+export const HEADER_LIST: IHeaderList[] = [
   {
     name: 'Home',
     active: true,
-    href: '#',
+    href: '/',
     label: 'На главную страницу',
   },
   {
     name: 'Pokédex',
     active: false,
-    href: '#',
+    href: '/pokedex',
     label: 'На другую страницу',
   },
   {
