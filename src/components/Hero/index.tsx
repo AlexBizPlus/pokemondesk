@@ -1,13 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { navigate } from 'hookrouter';
 import Button from '../Button';
 import Heading from '../Heading';
 import Parallax from '../Parallax';
 import s from './Hero.module.scss';
 
 const Hero = () => {
-  const history = useHistory();
-
   return (
     <div className={s.root}>
       <div className={s.contentText}>
@@ -20,7 +18,7 @@ const Hero = () => {
           width="regular"
           yellow="none"
           onClick={() => {
-            history.push('/pokedex');
+            navigate('/pokedex');
           }}>
           See pokemons
         </Button>

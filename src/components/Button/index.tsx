@@ -16,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, size, width, yellow 
         s.root,
         { [s.small]: size === 'small' },
         { [s.wide]: width === 'wide' },
+        { [s.paddings]: width === 'paddings' },
         { [s.yellow]: yellow === 'yellow' },
       )}
       type="button"
