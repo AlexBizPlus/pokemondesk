@@ -1,27 +1,80 @@
-.header {
-  width: 100%;
+@import '../../variables';
+
+.root {
   min-height: 93px;
-  background: #f5db13;
+  background: $third;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 16px 0px rgb(1, 28, 64, 0.2);
+  z-index: 1;
 }
 
-.logo {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.wrap {
+  width: 100%;
+  max-width: 1125px;
+  min-height: 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo__link {
-  text-decoration: none;
+.pokemonLogo {
+  width: 158px;
+  height: 63px;
 }
 
-.nav {
+.menuWrap {
+  display: flex;
+  max-width: 658px;
+  width: 100%;
+}
+
+.menuList {
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuLink {
   font-family: 'Karla', sans-serif;
-  font-size: 25px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
+  font-size: 25px;
   line-height: 29px;
+  color: $dark;
+  text-decoration: none;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    height: 1px;
+    width: 1%;
+    background: $dark;
+    border: 1px solid $dark;
+    border-radius: 6px;
+    opacity: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: opacity, width ease-in-out 0.25s;
+  }
+
+  &:hover,
+  &.activeLink {
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.menuItem {
+  margin-left: 10px;
+  margin-right: 10px;
 }
