@@ -1,30 +1,6 @@
 import React from 'react';
-// import Heading from '../Heading';
+import { PokemonProps } from '../../pokemonsPropTypes';
 import s from './PokemonCard.module.scss';
-
-interface PokemonStatsProps {
-  hp?: number;
-  attack: number;
-  defense: number;
-  'special-attack'?: number;
-  'special-defense'?: number;
-  speed?: number;
-}
-
-interface PokemonProps {
-  nameClean?: string;
-  abilities?: string[];
-  stats: PokemonStatsProps;
-  types: string[];
-  img?: string;
-  name?: string;
-  baseExperience?: number;
-  height?: number;
-  id?: number;
-  isDefault?: boolean;
-  order?: number;
-  weight?: number;
-}
 
 const PokemonCard: React.FC<PokemonProps> = ({ name, stats, img, types }) => {
   return (

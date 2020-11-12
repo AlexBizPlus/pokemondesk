@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from 'hookrouter';
+import { LinkEnum } from '../../routes';
 import Button from '../Button';
 import Heading from '../Heading';
 import Parallax from '../Parallax';
@@ -18,7 +19,7 @@ const Hero = () => {
           width="regular"
           yellow="none"
           onClick={() => {
-            navigate('/pokedex');
+            navigate(LinkEnum.POKEDEX);
           }}>
           See pokemons
         </Button>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { navigate } from 'hookrouter';
+import { LinkEnum } from '../../routes';
 import s from './NotFoundPage.module.scss';
 import TeamRocket from './assets/Team_Rocket_trio.png';
 import Button from '../../components/Button';
@@ -18,7 +19,7 @@ const NotFoundPage = () => {
           width="paddings"
           yellow="yellow"
           onClick={() => {
-            navigate('/');
+            navigate(LinkEnum.HOME);
           }}>
           Return
         </Button>
