@@ -3,7 +3,9 @@ import { EmptyData, PokemonResponse } from '../../pokemonsPropTypes';
 import Foooter from '../../components/Footer';
 import Heading from '../../components/Heading';
 import PokemonCard from '../../components/PokemonCard';
+import config from '../../config';
 import s from './PokedexPage.module.scss';
+import req from '../../utils/request';
 
 const usePokemons = () => {
   const [data, setData] = useState<PokemonResponse>(EmptyData);
@@ -13,9 +15,9 @@ const usePokemons = () => {
   useEffect(() => {
     const getPokemons = async () => {
       setIsLoading(true);
+
       try {
-        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons?limit=9');
-        const result = await response.json();
+        const result = await req('getPokemons');
         setData(result);
       } catch {
         setIsError(true);
@@ -47,6 +49,9 @@ const PokedexPage = () => {
   return (
     <div className={s.root}>
       <Heading>{data.total} Pokemons for you to choose your favorite</Heading>
+
+      <input className={s.label} id="find-pokemons" type="text" />
+
       <ul className={s.list}>
         {data.pokemons.map(({ name, stats, img, types }) => {
           return (
