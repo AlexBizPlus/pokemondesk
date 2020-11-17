@@ -9,28 +9,35 @@ interface IHeaderList {
   component: () => JSX.Element;
 }
 
+export enum LinkEnum {
+  HOME = '/',
+  POKEDEX = '/pokedex',
+  LEGENDARIES = '/legendaries',
+  DOCUMENTATION = '/documentation',
+}
+
 export const HEADER_LIST: IHeaderList[] = [
   {
     title: 'Home',
-    href: '/',
+    href: LinkEnum.HOME,
     label: 'На главную страницу',
     component: () => <HomePage />,
   },
   {
     title: 'Pokédex',
-    href: '/pokedex',
+    href: LinkEnum.POKEDEX,
     label: 'На другую страницу',
     component: () => <PokedexPage />,
   },
   {
     title: 'Legendaries',
-    href: '/legendaries',
+    href: LinkEnum.LEGENDARIES,
     label: 'На другую страницу',
     component: () => <PokedexPage />,
   },
   {
     title: 'Documentation',
-    href: '/documentation',
+    href: LinkEnum.DOCUMENTATION,
     label: 'На другую страницу',
     component: () => <PokedexPage />,
   },
