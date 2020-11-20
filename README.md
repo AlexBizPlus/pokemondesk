@@ -1,2 +1,2 @@
 # PokemonDesk
- Pet project form React PRO Marathon
+ Pet project from React PRO Marathon
