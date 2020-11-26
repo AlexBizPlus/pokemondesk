@@ -1,8 +1,9 @@
 import React from 'react';
-import { PokemonProps } from '../../pokemonsPropTypes';
+import { PokemonsRequest, ShortPokemonsRequest } from '../../interface/pokemons';
 import s from './PokemonCard.module.scss';
 
-const PokemonCard: React.FC<PokemonProps> = ({ name, stats, img, types }) => {
+const PokemonCard: React.FC<PokemonsRequest | ShortPokemonsRequest> = (item) => {
+  const { name, stats, img, types } = item;
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
