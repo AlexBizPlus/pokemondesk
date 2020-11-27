@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import HomePage from './pages/HomePage';
 import PokedexPage from './pages/PokedexPage';
+import PokemonPage, { PokemonProps } from './pages/PokemonPage';
 
 interface IHeaderList {
   title: string;
   href: string;
   label: string;
-  component: () => JSX.Element;
+  component: (props: PropsWithChildren<any>) => JSX.Element;
 }
 
 export enum LinkEnum {
@@ -14,6 +15,7 @@ export enum LinkEnum {
   POKEDEX = '/pokedex',
   LEGENDARIES = '/legendaries',
   DOCUMENTATION = '/documentation',
+  POKEMON = '/pokedex/:id',
 }
 
 export const HEADER_LIST: IHeaderList[] = [
@@ -43,11 +45,20 @@ export const HEADER_LIST: IHeaderList[] = [
   },
 ];
 
+export const ROUTES_LIST: IHeaderList[] = [
+  {
+    title: 'Pokemon',
+    href: LinkEnum.POKEMON,
+    label: 'На страницу покемонов',
+    component: ({ id }: PokemonProps) => <PokemonPage id={id} />,
+  },
+];
+
 interface IAcc {
-  [n: string]: () => JSX.Element;
+  [n: string]: (props: PropsWithChildren<any>) => JSX.Element;
 }
 
-const routes = HEADER_LIST.reduce((acc: IAcc, item: IHeaderList) => {
+const routes = [...HEADER_LIST, ...ROUTES_LIST].reduce((acc: IAcc, item: IHeaderList) => {
   acc[item.href] = item.component;
   return acc;
 }, {});
